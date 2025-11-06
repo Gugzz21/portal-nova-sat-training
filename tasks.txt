@@ -1,0 +1,212 @@
+# ✅ **Exercício 1 — Criar a Navbar e Configurar as Rotas**
+
+### 🎯 Objetivo:
+
+Aprender sobre roteamento, navegação e criação de componentes básicos.
+
+### 🧩 Tarefas:
+
+1. Criar o componente `navbar`:
+
+   ```
+   ng g c shared/navbar
+   ```
+2. Adicionar links para:
+
+   * Dashboard
+   * Sobre
+   * Contato
+3. Configurar `app-routing.module.ts` criando rotas:
+
+   * `/dashboard`
+   * `/sobre`
+   * `/contato`
+4. Inserir a navbar no `app.component.html`
+
+### ✅ Entrega esperada:
+
+* Navegação funcional entre as páginas
+* Navbar fixa no topo
+* Estrutura inicial de rotas funcionando
+
+---
+
+# ✅ **Exercício 2 — Criar o Layout Base do Dashboard**
+
+### 🎯 Objetivo:
+
+Construir a primeira tela do portal, trabalhar HTML e CSS.
+
+### 🧩 Tarefas:
+
+1. Criar a estrutura dos cards no `dashboard.component.html`
+2. Criar um grid responsivo:
+
+   ```css
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 20px;
+   ```
+3. Criar 6 cards fictícios com:
+
+   * ícone (pode ser imagem)
+   * título
+   * descrição
+
+### ✅ Entrega esperada:
+
+* Dashboard com cards bem organizados
+* Layout responsivo (desktop/tablet/mobile)
+
+---
+
+# ✅ **Exercício 3 — Criar o Componente Reutilizável de Card**
+
+### 🎯 Objetivo:
+
+Introduzir componentização e `@Input()`.
+
+### 🧩 Tarefas:
+
+1. Criar componente:
+
+   ```
+   ng g c shared/card
+   ```
+2. Receber via `@Input()`:
+
+   * `title: string`
+   * `description: string`
+   * `icon: string`
+3. Atualizar o dashboard para usar o componente `<app-card>`.
+
+### ✅ Entrega esperada:
+
+* Cards reutilizáveis
+* Dashboard limpo e organizado
+
+---
+
+# ✅ **Exercício 4 — Criar um Arquivo de Dados (Mock)**
+
+### 🎯 Objetivo:
+
+Ensinar estruturação de dados e organização.
+
+### 🧩 Tarefas:
+
+1. Criar `assets/data/cards.json` com conteúdo:
+
+   ```json
+   [
+     { "title": "Card 1", "description": "Descrição 1", "icon": "icon1.png" },
+     { "title": "Card 2", "description": "Descrição 2", "icon": "icon2.png" }
+   ]
+   ```
+2. Criar um serviço:
+
+   ```
+   ng g s core/card
+   ```
+3. Ler o JSON com `HttpClient`.
+4. Exibir os dados no dashboard.
+
+### ✅ Entrega esperada:
+
+* Dados externos carregando corretamente
+* Dashboard populado automaticamente
+
+---
+
+# ✅ **Exercício 5 — Criar a Página "Sobre"**
+
+### 🎯 Objetivo:
+
+Trabalhar HTML semântico e escrita técnica.
+
+### 🧩 Tarefas:
+
+1. Criar texto institucional:
+
+   * O que é o portal
+   * Quem desenvolveu
+   * Propósito do laboratório
+2. Criar layout simples com:
+
+   * título
+   * parágrafos
+   * imagem ilustrativa
+
+### ✅ Entrega esperada:
+
+Página visualmente organizada e responsiva.
+
+---
+
+# ✅ **Exercício 6 — Criar a Página “Contato”**
+
+### 🎯 Objetivo:
+
+Testar formulários com Angular.
+
+### 🧩 Tarefas:
+
+1. Criar formulário com:
+
+   * nome
+   * email
+   * mensagem
+2. Validar:
+
+   * campo obrigatório
+   * email válido
+3. Exibir no console os dados enviados (não precisa back-end).
+
+### ✅ Entrega esperada:
+
+Formulário validado e funcional.
+
+---
+
+# ✅ **Exercício 7 — Responsividade Completa**
+
+### 🎯 Objetivo:
+
+Treinar design responsivo.
+
+### 🧩 Tarefas:
+
+1. Ajustar dashboard para:
+
+   * 3 cards por linha (desktop)
+   * 2 cards por linha (tablet)
+   * 1 card por linha (mobile)
+2. Ajustar navbar para colapsar em telas menores.
+
+### ✅ Entrega esperada:
+
+Site navegável e bonito em mobile.
+
+---
+
+# ✅ **Exercício 8 — Criar Estrutura de README para o Projeto**
+
+### 🎯 Objetivo:
+
+Ensinar boas práticas de documentação.
+
+### 🧩 Tarefas:
+
+1. Explicar:
+
+   * propósito do projeto
+   * como executar
+   * onde estão as pastas
+   * o que foi desenvolvido
+2. Incluir screenshots
+
+### ✅ Entrega esperada:
+
+README profissional.
+
+---
