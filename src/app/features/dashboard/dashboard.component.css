@@ -1,6 +1,2 @@
-.app-container {
-  display: flex; /* Define o container como flexível */
-  flex-direction: column; /* Organiza os filhos (Header e Content-Area) em coluna */
-  min-height: 100vh; /* Garante que ocupe a altura mínima da tela */
-}
+
 
