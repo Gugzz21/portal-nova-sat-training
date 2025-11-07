@@ -11,7 +11,7 @@ interface MenuItem {
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss'],
+  styleUrls: ['./sidebar.component.css'],
   imports: [CommonModule]
 })
 export class SidebarComponent {
@@ -24,22 +24,22 @@ export class SidebarComponent {
       label: 'Dashboard',
       isOpen: false,
       children: [
-        { icon: 'fas fa-chart-pie', label: 'Analytics' },
-        { icon: 'fas fa-tasks', label: 'Projects' },
+        { icon: 'fas fa-chart-pie', label: 'Gráficos' },
+        { icon: 'fas fa-tasks', label: 'Projetos' },
       ]
     },
     {
       icon: 'fas fa-cog',
-      label: 'Settings',
+      label: 'Configurações',
       isOpen: false,
       children: [
-        { icon: 'fas fa-user', label: 'Profile' },
+        { icon: 'fas fa-user', label: 'Blablabla' },
         { icon: 'fas fa-lock', label: 'Security' },
       ]
     },
     {
       icon: 'fas fa-envelope',
-      label: 'Messages'
+      label: 'Mensagens'
     }
   ];
 

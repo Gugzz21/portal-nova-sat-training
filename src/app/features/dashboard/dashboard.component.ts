@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from "../../components/sidebar/sidebar.component";
-import { NgClass } from "../../../../node_modules/@angular/common/common_module.d-NEF7UaHr";
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [SidebarComponent, NgClass],
+  imports: [SidebarComponent, CommonModule], 
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -14,5 +14,4 @@ export class DashboardComponent {
   onSidebarToggle() {
     this.isSidebarCollapsed = !this.isSidebarCollapsed;
   }
-
 }
