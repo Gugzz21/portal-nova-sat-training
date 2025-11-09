@@ -1,3 +1,31 @@
 .home-container{
   display: flex;
+  min-height: 100vh;
+}
+
+.area-conteudo {
+  display: flex;
+  width: 100%;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+
+app-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.conteudo .card {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+app-card {
+  padding: 30px;
 }
