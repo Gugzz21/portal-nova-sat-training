@@ -1,3 +1,24 @@
-<div class="container-dashboard">
-    <h1>Dashboard</h1>
+<div class="header">
+  <h2>Channel Dashboard</h2>
 </div>
+  <button mat-raised-button [mat-menu-trigger-for]="widgetMenu">
+    <mat-icon>add_circle</mat-icon>
+    Adicionar Widget
+  </button>
+  <mat-menu #widgetMenu="matMenu">
+    @for (widget of store.widgetsParaAdicionar(); track widget.id) {
+      <button mat-menu-item (click)="store.adicionarWidget(widget)">
+            {{ widget.label }}
+      </button>
+  }@empty {
+    <button mat-menu-item>
+      Sem widgets para adicionar 
+      </button>
+  }
+  </mat-menu>
+
+    <div class="dashboard-widgets"></div>
+    @for (w of store.addedWidgets(); track w.id) {
+    <app-widget [data]="w"/>
+   }
+
