@@ -4,7 +4,7 @@ export const routes: Routes = [
     {
 
       path : '',
-      loadComponent: () => import('./features/home/home.component').then(mod => mod.HomeComponent),
+      loadComponent: () => import('./pages/home/home.component').then(mod => mod.HomeComponent),
       children :  [
 
 
@@ -15,7 +15,7 @@ export const routes: Routes = [
 
           {
             path: 'dashboard',
-            loadComponent: () => import('./features/dashboardpage/dashboardpage.component').then(mod => mod.DashboardpageComponent)
+            loadComponent: () => import('./pages/dashboardpage/dashboardpage.component').then(mod => mod.DashboardpageComponent)
           },
       ]
     }

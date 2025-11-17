@@ -23,8 +23,9 @@
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "card": "^2.5.4",
     "chips": "^0.1.0",
-    "mat": "^1.0.19",
+    "mat": "^1.0.23",
     "material": "^0.9.24",
+    "ng2-charts": "^8.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
