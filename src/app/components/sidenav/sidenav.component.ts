@@ -16,7 +16,7 @@ import { RouterLink } from "@angular/router";
 export class SidenavComponent {
 @ViewChild('drawer') drawer!: MatSidenav;
 
-showFiller: boolean = true;
+showFiller: boolean = false;
 
   toggleSidebar(): void {
     this.drawer.toggle();

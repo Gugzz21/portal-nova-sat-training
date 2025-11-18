@@ -1,23 +1,23 @@
 <mat-drawer-container class="container" autosize>
-  <mat-drawer #drawer class="sidenav" mode="side">
+  <mat-drawer #drawer class="sidenav" mode="side" [opened]="true">
     <mat-nav-list class="nav-list">
       <a mat-list-item
-       [routerLink]="['/dashboard']"
+       [routerLink]="['']"
           routerLinkActive="active"
           class="nav-link">
         <i class="material-icons">dashboard</i>Dashboard
       </a>
       <a mat-list-item
-        [routerLink]="['/card']"
+        [routerLink]="['/about']"
           routerLinkActive="active"
           class="nav-link">
-        <i class="material-icons">notes</i>Cards
+        <i class="material-icons">info</i>About
       </a>
-      <a mat-list-item routerLink="/">
-        <i class="material-icons">person_search</i>Cliente
-      </a>
-      <a mat-list-item routerLink="/">
-        <i class="material-icons">person_pin</i>Ordens de Serviço
+      <a mat-list-item
+        [routerLink]="['/contact']"
+          routerLinkActive="active"
+          class="nav-link">
+        <i class="material-icons">contact_page</i>Contact
       </a>
 
     </mat-nav-list>
@@ -32,4 +32,3 @@
 
 
 </mat-drawer-container>
-

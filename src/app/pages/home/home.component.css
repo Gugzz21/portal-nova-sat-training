@@ -4,15 +4,9 @@
   background-color: #e7dede;
 }
 
-.area-conteudo {
+.content-area {
   display: flex;
   width: 100%;
-}
-
-.inicio {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
 }
 
 
@@ -21,14 +15,9 @@ app-sidebar {
   flex-shrink: 0;
 }
 
-.inicio .card {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-app-card {
-  padding: 30px;
+app-header{
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .logo {

@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,

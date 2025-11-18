@@ -1,13 +1,23 @@
 .example-card {
-  max-width: 400px;
-  border: 1px solid black;
-  padding: 20px;
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  padding: clamp(12px, 3vw, 20px);
   border-radius: 8px;
-  background-color: white;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.example-card-footer {
-  padding: 16px;
+.example-card-header { margin-bottom: 12px; }
+
+.example-card-title { font-size: clamp(1rem, 3vw, 1.3rem); margin: 0; }
+
+.example-card-content { font-size: clamp(0.9rem, 2.3vw, 1rem); color: #444; }
+
+.example-card-footer { padding: 12px; }
+
+@media (max-width: 480px) {
+  .example-card { padding: 10px; }
 }
 
 
