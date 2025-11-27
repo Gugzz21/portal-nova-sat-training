@@ -10,20 +10,10 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-dashboardpage',
   standalone: true,
-  imports: [CommonModule, DashboardComponent, CardComponent, CreateCardComponent],
+  imports: [CommonModule, DashboardComponent,],
   templateUrl: './dashboardpage.component.html',
   styleUrl: './dashboardpage.component.css'
 })
-export class DashboardpageComponent implements OnInit {
-  /** Observable que contém a lista de cards */
-  cards$: Observable<Card[]> | undefined;
+export class DashboardpageComponent{
 
-  constructor(private cardService: CardService) {}
-
-  /**
-   * Inicializa o componente carregando todos os cards do serviço.
-   */
-  ngOnInit(): void {
-    this.cards$ = this.cardService.getAllCards();
-  }
 }

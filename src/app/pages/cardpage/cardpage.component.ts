@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CardService } from '../../service/card.service';
 import { Card } from '../../model/card';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './cardpage.component.html',
   styleUrl: './cardpage.component.css',
 })
-export class CardpageComponent {
+export class CardpageComponent implements OnInit {
   /** Observable que contém a lista de cards */
     cards$: Observable<Card[]> | undefined;
 

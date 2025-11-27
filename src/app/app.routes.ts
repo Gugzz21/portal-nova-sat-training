@@ -20,9 +20,13 @@ export const routes: Routes = [
           loadComponent: () => import('./pages/contactpage/contactpage.component').then(mod => mod.ContactpageComponent)
         },
 
-        // Rota para a página de Contato
+        // Rota para a página de Card
         { path: 'cards',
           loadComponent: () => import('./pages/cardpage/cardpage.component').then(mod => mod.CardpageComponent)
+        },
+        // Rota para a página de Criação de Cards
+          { path: 'cards-create',
+          loadComponent: () => import('./pages/creationcardpage/creationcardpage.component').then(mod => mod.CreationcardpageComponent)
         }
       ]
     }

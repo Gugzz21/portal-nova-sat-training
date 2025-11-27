@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+app-create-card{
+  padding-top: 100px;
+}
+
