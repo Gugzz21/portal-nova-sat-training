@@ -3,9 +3,10 @@ import { CreateCardComponent } from "../../components/create-card/create-card.co
 
 @Component({
   selector: 'app-creationcardpage',
+  standalone: true,
   imports: [CreateCardComponent],
   templateUrl: './creationcardpage.component.html',
-  styleUrl: './creationcardpage.component.css',
+  styleUrls: ['./creationcardpage.component.css'],
 })
 export class CreationcardpageComponent {
 

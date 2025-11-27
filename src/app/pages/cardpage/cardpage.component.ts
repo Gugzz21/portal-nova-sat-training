@@ -7,9 +7,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cardpage',
+  standalone: true,
   imports: [CardComponent, CommonModule],
   templateUrl: './cardpage.component.html',
-  styleUrl: './cardpage.component.css',
+  styleUrls: ['./cardpage.component.css'],
 })
 export class CardpageComponent implements OnInit {
   /** Observable que contém a lista de cards */

@@ -1,12 +1,29 @@
- <h2>Cards</h2>
-      <!-- Grid de cards dinâmicos -->
-      <div class="cards-grid">
-  @for (card of cards$ | async; track card) {
-   <app-card
-  [title]="card.title"
-  [description]="card.description"
-  [icon]="card.icon"
-  [type]="card.type ?? 'image'"> </app-card>
-  }
-</div>
+<div class="container">
+  <div class="content">
 
+    <div class="page-header">
+      <h1>Meus Cards</h1>
+    </div>
+
+    <div class="scroll-area">
+      <div class="cards-grid">
+        <ng-container *ngIf="(cards$ | async) as cards">
+
+          <app-card
+            *ngFor="let card of cards"
+            [title]="card.title"
+            [description]="card.description"
+            [icon]="card.icon"
+            [type]="card.type ?? 'image'">
+          </app-card>
+
+          <p class="empty" *ngIf="cards.length === 0">
+            Nenhum card disponível.
+          </p>
+
+        </ng-container>
+      </div>
+    </div>
+
+  </div>
+</div>
