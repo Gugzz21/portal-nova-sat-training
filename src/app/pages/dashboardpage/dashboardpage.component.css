@@ -21,6 +21,8 @@
   width: 1000px;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: rgb(26, 36, 59);
+  border-radius: 20px;
 }
 
 /* Garante que o título ocupe a linha inteira e alinhe o texto à esquerda */
@@ -35,11 +37,11 @@
 
 /* (Opcional) Se quiser garantir que o flex não bagunce */
 .main-content {
-  /* ... mantenha o resto ... */
-
-  /* Se o justify-content estiver 'center', o width: 100% no h1 resolve,
-     mas se quiser garantir, use flex-start e margens automáticas nos itens */
-  justify-content: flex-start;
+  background-color: #333333;
+ align-items: center;
+  margin:20px; 
+  padding: 20px;
+  border-radius: 20px;
 }
 
 
