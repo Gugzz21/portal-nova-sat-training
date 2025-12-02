@@ -13,9 +13,9 @@ export class AuthService {
     constructor() { }
 
     /**
-     * Simulates a login API call.
-     * @param email User email
-     * @param password User password
+     * Simula uma chamada de API de login.
+     * @param email Email do usuário
+     * @param password Senha do usuário
      * @returns Observable<boolean>
      */
     login(email: string, password: string): Observable<boolean> {
@@ -36,8 +36,8 @@ export class AuthService {
     }
 
     /**
-     * Registers a new user.
-     * @param user User object
+     * Registra um novo usuário.
+     * @param user Objeto do usuário
      * @returns Observable<boolean>
      */
     register(user: any): Observable<boolean> {
@@ -63,14 +63,14 @@ export class AuthService {
     }
 
     /**
-     * Logs the user out by removing the token.
+     * Desloga o usuário removendo o token.
      */
     logout(): void {
         localStorage.removeItem(this.tokenKey);
     }
 
     /**
-     * Checks if the user is logged in.
+     * Verifica se o usuário está logado.
      * @returns boolean
      */
     isLoggedIn(): boolean {
