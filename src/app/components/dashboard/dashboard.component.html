@@ -1,18 +1,19 @@
 <div class="container">
   <!-- Grid de cards de estatísticas -->
+  <h1 class="page-title">Visão Geral</h1>
   <div class="cards-grid">
     @for (card of cards; track card) {
-      <mat-card class="stats-card">
-        <mat-card-content>
-          <div class="card-flex">
-            <div>
-              <p class="card-title">{{ card.title }}</p>
-              <h2 class="card-value">{{ card.value }}</h2>
-            </div>
-            <mat-icon class="card-icon" [ngClass]="card.color">{{ card.icon }}</mat-icon>
+    <mat-card class="stats-card">
+      <mat-card-content>
+        <div class="card-flex">
+          <div>
+            <p class="card-title">{{ card.title }}</p>
+            <h2 class="card-value">{{ card.value }}</h2>
           </div>
-        </mat-card-content>
-      </mat-card>
+          <mat-icon class="card-icon" [ngClass]="card.color">{{ card.icon }}</mat-icon>
+        </div>
+      </mat-card-content>
+    </mat-card>
     }
   </div>
 
@@ -23,10 +24,7 @@
         <mat-card-title>Estatísticas da Semana</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <canvas baseChart
-          [data]="barChartData"
-          [options]="barChartOptions"
-          [type]="'bar'">
+        <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="'bar'">
         </canvas>
       </mat-card-content>
     </mat-card>
