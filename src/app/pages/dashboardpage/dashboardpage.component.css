@@ -37,9 +37,9 @@
 
 /* (Opcional) Se quiser garantir que o flex não bagunce */
 .main-content {
-  background-color: #333333;
- align-items: center;
-  margin:20px; 
+  background-color: var(--dashboard-container-bg);
+  align-items: center;
+  margin: 20px;
   padding: 20px;
   border-radius: 20px;
 }

@@ -39,6 +39,9 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
+
+  /* Dashboard Specific */
+  --dashboard-container-bg: #e0e0e0;
 }
 
 /* Tema Escuro */
@@ -68,6 +71,8 @@
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+
+  --dashboard-container-bg: #333333;
 }
 
 /* Force pure white text for headings in dark mode */
