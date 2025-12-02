@@ -10,14 +10,14 @@
           <i class="material-icons">dashboard</i>Dashboard
         </a>
 
-         <a mat-list-item [routerLink]="['/cards']" routerLinkActive="active" class="nav-link">
+        <a mat-list-item [routerLink]="['/cards']" routerLinkActive="active" class="nav-link">
           <i class="material-icons">notes</i>Cards
         </a>
 
-           <a mat-list-item [routerLink]="['/cards-create']" routerLinkActive="active" class="nav-link">
+        <a mat-list-item [routerLink]="['/cards-create']" routerLinkActive="active" class="nav-link">
           <i class="material-icons">add</i>Criação de Cards
         </a>
-        
+
         <!-- Link para a página Sobre -->
         <a mat-list-item [routerLink]="['/about']" routerLinkActive="active" class="nav-link">
           <i class="material-icons">info</i>Sobre
@@ -38,10 +38,10 @@
       <button mat-icon-button (click)="toggleSidebar()">
         <!-- Ícone de seta que muda dependendo do estado (aberto/fechado) -->
         @if (showFiller) {
-          <img src="assets/setaDireita.png" alt="setaDireita">
+        <img src="assets/setaDireita.png" alt="setaDireita">
         }
         @if (!showFiller) {
-          <img src="assets/setaEsquerda.png" alt="setaDireita">
+        <img src="assets/setaEsquerda.png" alt="setaDireita">
         }
       </button>
     </div>
@@ -65,10 +65,20 @@
       <a mat-list-item [routerLink]="['']" routerLinkActive="active" class="nav-link" (click)="toggleMobileMenu()">
         <i class="material-icons">dashboard</i>Dashboard
       </a>
-      <a mat-list-item [routerLink]="['/about']" routerLinkActive="active" class="nav-link" (click)="toggleMobileMenu()">
+      <a mat-list-item [routerLink]="['/cards']" routerLinkActive="active" class="nav-link"
+        (click)="toggleMobileMenu()">
+        <i class="material-icons">notes</i>Cards
+      </a>
+      <a mat-list-item [routerLink]="['/cards-create']" routerLinkActive="active" class="nav-link"
+        (click)="toggleMobileMenu()">
+        <i class="material-icons">add</i>Criação de Cards
+      </a>
+      <a mat-list-item [routerLink]="['/about']" routerLinkActive="active" class="nav-link"
+        (click)="toggleMobileMenu()">
         <i class="material-icons">info</i>About
       </a>
-      <a mat-list-item [routerLink]="['/contact']" routerLinkActive="active" class="nav-link" (click)="toggleMobileMenu()">
+      <a mat-list-item [routerLink]="['/contact']" routerLinkActive="active" class="nav-link"
+        (click)="toggleMobileMenu()">
         <i class="material-icons">contact_page</i>Contact
       </a>
     </mat-nav-list>
