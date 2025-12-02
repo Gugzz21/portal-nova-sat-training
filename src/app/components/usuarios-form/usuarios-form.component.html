@@ -1,12 +1,14 @@
-<form [formGroup]="form" (ngSubmit)="onSave()">
-  <div>
-    <label for="name">Nome:</label>
-    <input id="name" type="text" formControlName="name">
+<form [formGroup]="form" (ngSubmit)="onSave()" class="user-form">
+  <div class="form-group">
+    <label for="name">Nome</label>
+    <input id="name" type="text" formControlName="name" class="form-control" placeholder="Digite o nome">
   </div>
-  <div>
-    <label for="email">Email:</label>
-    <input id="email" type="email" formControlName="email">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" class="form-control" placeholder="Digite o email">
   </div>
-  <button type="submit" [disabled]="!form.valid">Salvar</button>
-  <button type="button" (click)="onCancel()">Cancelar</button>
+  <div class="form-actions">
+    <button type="button" class="btn-cancel" (click)="onCancel()">Cancelar</button>
+    <button type="submit" class="btn-submit" [disabled]="!form.valid">Salvar</button>
+  </div>
 </form>

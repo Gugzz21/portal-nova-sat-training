@@ -13,9 +13,9 @@
       <td>{{ user.name }}</td>
       <td>{{ user.email }}</td>
       <td>
-        <button (click)="onDetails(user)">Detalhes</button>
-        <button (click)="onEdit(user)">Editar</button>
-        <button (click)="onDelete(user)">Excluir</button>
+        <button class="btn-details" (click)="onDetails(user)">Detalhes</button>
+        <button class="btn-edit" (click)="onEdit(user)">Editar</button>
+        <button class="btn-delete" (click)="onDelete(user)">Excluir</button>
       </td>
     </tr>
   </tbody>
@@ -23,9 +23,9 @@
 
 <app-modal [isOpen]="isModalOpen" title="Confirmar Exclusão" (close)="onCancelDelete()">
   <p>Tem certeza que deseja excluir o usuário <strong>{{ userToDelete?.name }}</strong>?</p>
-  <div>
-    <button (click)="onConfirmDelete()">Sim</button>
-    <button (click)="onCancelDelete()">Não</button>
+  <div class="modal-actions">
+    <button class="btn-danger" (click)="onConfirmDelete()">Sim</button>
+    <button class="btn-secondary" (click)="onCancelDelete()">Não</button>
   </div>
 </app-modal>
 

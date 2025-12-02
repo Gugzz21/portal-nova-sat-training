@@ -1,5 +1,5 @@
 .create-card-container {
-  background-color: var(--white);
+  background-color: var(--card-bg);
   padding: var(--spacing-lg);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -23,7 +23,7 @@
 
 /* Estilo para o link da lista de ícones */
 .input-with-hint small a {
-  color: #007bff;
+  color: var(--accent-color);
   text-decoration: none;
   font-size: 0.8rem;
 }
@@ -33,7 +33,7 @@
   font-size: 48px;
   width: 48px;
   height: 48px;
-  color: #555;
+  color: var(--text-color);
   /* Cor do ícone */
   margin-top: 10px;
 }
@@ -82,10 +82,8 @@ textarea {
   font-family: inherit;
   font-size: 0.95rem;
   transition: border-color 0.3s ease;
-  background-color: #ffffff;
-  /* Force White */
-  color: #000000;
-  /* Force Black */
+  background-color: var(--background-light);
+  color: var(--text-color);
 }
 
 input[type="text"]:focus,
