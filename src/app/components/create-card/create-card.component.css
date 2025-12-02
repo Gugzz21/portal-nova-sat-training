@@ -48,8 +48,7 @@
   border-radius: 4px;
 }
 
-h2 {
-  font-size: 1.4rem;
+h1 {
   margin-bottom: var(--spacing-md);
   color: var(--primary-color);
   border-bottom: 2px solid var(--accent-color);
