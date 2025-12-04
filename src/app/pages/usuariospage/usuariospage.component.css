@@ -4,14 +4,14 @@
   padding: var(--spacing-xl);
   background-color: var(--background-light);
   min-height: 100%;
-  background-color: rgb(26, 36, 59);;
+  background-color: rgb(26, 36, 59);
+  border-radius: 20px;
 }
 
 .content {
   width: 1000px;
   background-color: var(--card-bg);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  border-radius: 20px;
   padding: var(--spacing-xl);
 }
 

@@ -2,7 +2,7 @@
   background-color: rgb(26, 36, 59);
   width: 100%;
   padding:20px;
-  box-sizing: border-box;
+  border-radius: 20px;
 }
 
 /* Wrapper apenas para limitar a largura do componente filho */
@@ -10,4 +10,9 @@
   max-width: 500px;
   margin: 0 auto;
 
+}
+
+.create-card-section { 
+  padding: 10px;;
+  border-radius: 20px;
 }

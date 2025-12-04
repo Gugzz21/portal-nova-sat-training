@@ -6,21 +6,16 @@
   width: 100%;
   height: 100%;
   background-color: var(--background-light);
-  padding: 20px;
 }
 
 
 .main-content {
-  display: flex;
-  flex-direction: row;
+  display: block;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-lg) var(--spacing-xl);
   overflow-y: auto;
   width: 1000px;
   max-width: 1200px;
-  margin: 0 auto;
   background-color: rgb(26, 36, 59);
   border-radius: 20px;
 }
@@ -38,8 +33,6 @@
 /* (Opcional) Se quiser garantir que o flex não bagunce */
 .main-content {
   box-shadow: 20px;
-  align-items: center;
-  margin: 20px;
   padding: 20px;
   border-radius: 20px;
 }

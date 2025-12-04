@@ -5,14 +5,15 @@
   padding: var(--spacing-xl);
   background-color: var(--background-light);
   background-color: rgb(26, 36, 59);
+  border-radius: 20px;
+  
 }
 
 .content {
   width: 1000px;
   background-color: var(--card-bg);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
   padding: var(--spacing-xl);
+  border-radius: 20px;
 }
 
 h1 {

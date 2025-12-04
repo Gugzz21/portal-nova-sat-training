@@ -3,8 +3,9 @@
     justify-content: center;
     padding: var(--spacing-xl);
     background-color: var(--background-light);
-    min-height: 100%;
-    background-color: rgb(26, 36, 59);;
+    min-height: 80%;
+    background-color: rgb(26, 36, 59);
+    border-radius: 20px;
 }
 
 .content {

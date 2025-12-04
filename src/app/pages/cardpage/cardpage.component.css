@@ -6,6 +6,7 @@
   /* Alinha no topo, não no centro */
   padding: 20px;
   background-color: rgb(26, 36, 59);
+  border-radius: 20px;
   height: 100vh;
   /* Altura total da viewport */
   box-sizing: border-box;
@@ -16,6 +17,7 @@
 
 /* Painel Branco (Wrapper) */
 .content {
+  border-radius: 20px;
   width: 100%;
   max-width: 1200px;
   /* Largura máxima confortável */
