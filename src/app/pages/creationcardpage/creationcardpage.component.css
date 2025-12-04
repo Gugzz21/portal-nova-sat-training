@@ -3,6 +3,8 @@
   width: 100%;
   padding:20px;
   border-radius: 20px;
+  height: 59%;
+  width: auto;
 }
 
 /* Wrapper apenas para limitar a largura do componente filho */
