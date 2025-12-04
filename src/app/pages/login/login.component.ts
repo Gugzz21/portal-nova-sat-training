@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
+import { ThemeService } from '../../service/theme.service';
 
 @Component({
     selector: 'app-login',
@@ -19,11 +20,16 @@ export class LoginComponent {
     private authService = inject(AuthService);
     private router = inject(Router);
     private fb = inject(FormBuilder);
+    private themeService = inject(ThemeService);
+    isDarkTheme = false;
 
     constructor() {
-        this.loginForm = this.fb.group({
+        this.loginForm = this.fb.group({    
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required]]
+        });
+        this.themeService.currentTheme$.subscribe(theme => {
+            this.isDarkTheme = theme === 'dark';
         });
     }
 
@@ -45,5 +51,9 @@ export class LoginComponent {
                 }
             });
         }
+    }
+
+    toggleTheme() {
+        this.themeService.toggleTheme();
     }
 }
