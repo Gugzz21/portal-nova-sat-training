@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
+import { ThemeService } from '../../service/theme.service';
 
 @Component({
     selector: 'app-register',
@@ -19,12 +20,17 @@ export class RegisterComponent {
     private authService = inject(AuthService);
     private router = inject(Router);
     private fb = inject(FormBuilder);
+    private themeService = inject(ThemeService);
+    isDarkTheme = false;
 
     constructor() {
         this.registerForm = this.fb.group({
             name: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required, Validators.minLength(6)]]
+        });
+        this.themeService.currentTheme$.subscribe(theme => {
+            this.isDarkTheme = theme === 'dark';
         });
     }
 
@@ -37,7 +43,7 @@ export class RegisterComponent {
             this.authService.register(user).subscribe({
                 next: () => {
                     this.isLoading = false;
-                    this.router.navigate(['/login']); 
+                    this.router.navigate(['/login']);
                 },
                 error: (err) => {
                     this.isLoading = false;
@@ -45,5 +51,8 @@ export class RegisterComponent {
                 }
             });
         }
+    }
+     toggleTheme() {
+        this.themeService.toggleTheme();
     }
 }
