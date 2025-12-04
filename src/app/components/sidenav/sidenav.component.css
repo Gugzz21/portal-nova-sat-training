@@ -91,7 +91,7 @@ button {
   }
 
   .mobile-menu.open {
-    max-height: 300px;
+    max-height: 600px;
     /* Adjust based on content */
     border-bottom: 1px solid #eee;
   }
@@ -124,4 +124,13 @@ button {
 
 .logout-link .material-icons {
   color: #d32f2f !important;
+}
+
+/* Dark Mode Selected State */
+:host-context(.dark) .nav-link.active {
+  color: var(--sidebar-hover-bg) !important;
+}
+
+:host-context(.dark) .nav-link.active .material-icons {
+  color: var(--sidebar-hover-bg) !important;
 }
