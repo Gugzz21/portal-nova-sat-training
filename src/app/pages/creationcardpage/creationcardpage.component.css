@@ -1,12 +1,8 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Alinha no topo (com margin) em vez de centro absoluto */
-  padding-top: 40px; /* Dá um respiro do topo */
-  background-color: var(--background-light);
-  min-height: 100%;
+  background-color: rgb(26, 36, 59);
   width: 100%;
   padding:20px;
+  box-sizing: border-box;
 }
 
 /* Wrapper apenas para limitar a largura do componente filho */

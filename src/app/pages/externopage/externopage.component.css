@@ -4,6 +4,7 @@
     padding: var(--spacing-xl);
     background-color: var(--background-light);
     min-height: 100%;
+    background-color: rgb(26, 36, 59);;
 }
 
 .content {

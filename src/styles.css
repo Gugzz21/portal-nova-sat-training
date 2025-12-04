@@ -41,7 +41,7 @@
   --radius-lg: 12px;
 
   /* Dashboard Specific */
-  --dashboard-container-bg: #e0e0e0;
+  --dashboard-container-bg: #aaaaaa;
 }
 
 /* Tema Escuro */
@@ -110,7 +110,6 @@ body {
   font-family: 'Roboto', 'Inter', sans-serif;
   background-color: var(--background-light);
   color: var(--text-color);
-  line-height: 1.6;
 }
 
 *,

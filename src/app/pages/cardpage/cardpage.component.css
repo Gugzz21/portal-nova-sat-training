@@ -5,7 +5,7 @@
   align-items: flex-start;
   /* Alinha no topo, não no centro */
   padding: 20px;
-  background-color: var(--background-light);
+  background-color: rgb(26, 36, 59);
   height: 100vh;
   /* Altura total da viewport */
   box-sizing: border-box;
