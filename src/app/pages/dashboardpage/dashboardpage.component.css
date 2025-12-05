@@ -11,13 +11,14 @@
 
 .main-content {
   display: block;
-  justify-content: center;
-  flex-wrap: wrap;
-  overflow-y: auto;
-  width: 1000px;
+  width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+  /* Center content */
   background-color: rgb(26, 36, 59);
   border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Garante que o título ocupe a linha inteira e alinhe o texto à esquerda */

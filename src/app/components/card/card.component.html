@@ -1,18 +1,18 @@
-<div class="card">
-  <div class="card-icon-container">
+<div class="card-item">
+  <div class="card-header">
+    <div class="card-icon-container">
+      @if (type === 'image') {
+        <img [src]="icon" alt="ícone do card" class="card-img">
+      }
 
-    @if (type === 'image') {
-      <img [src]="icon" alt="ícone do card" class="card-img">
-    }
+      @if (type === 'icon') {
+        <mat-icon class="card-mat-icon">{{ icon }}</mat-icon>
+      }
+    </div>
 
-    @if (type === 'icon') {
-      <mat-icon class="card-mat-icon">{{ icon }}</mat-icon>
-    }
-
-  </div>
-
-  <div class="card-content">
-    <h3>{{ title }}</h3>
-    <p>{{ description }}</p>
+    <div class="card-content">
+      <h3 class="card-title">{{ title }}</h3>
+      <p class="card-description">{{ description }}</p>
+    </div>
   </div>
 </div>

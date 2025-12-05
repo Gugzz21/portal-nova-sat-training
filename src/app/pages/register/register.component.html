@@ -1,6 +1,14 @@
-
 <div class="register-container">
     <div class="register-card">
+        <div class="theme-switch-container">
+            <label class="theme-switch">
+                <input type="checkbox" [checked]="isDarkTheme" (change)="toggleTheme()">
+                <span class="slider round">
+                    <span class="icon sun">☀️</span>
+                    <span class="icon moon">🌙</span>
+                </span>
+            </label>
+        </div>
         <h2>Criar Conta</h2>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-group">

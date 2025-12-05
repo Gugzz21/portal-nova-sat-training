@@ -22,6 +22,10 @@ button {
 .nav-link {
   color: var(--text-color) !important;
   transition: background-color 0.3s, color 0.3s;
+  margin-bottom: 10px;
+  /* Added spacing */
+  border-radius: 8px;
+  /* Optional: rounded corners for better look with spacing */
 }
 
 .nav-link .material-icons {

@@ -2,9 +2,8 @@
 /* CSS do app-dashboard */
 .container {
   background-color: transparent;
-  min-height: auto;
-  width: 800px;
-  box-sizing: content-box;
+  width: 100%;
+  box-sizing: border-box;
   padding: 20px;
 }
 
