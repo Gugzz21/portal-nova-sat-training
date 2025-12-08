@@ -4,6 +4,14 @@
     align-items: center;
     height: 100vh;
     background-color: var(--background-light);
+    flex-direction: column;
+    gap: 20px;
+}
+
+.themes {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .register-card {
@@ -99,11 +107,7 @@ button:disabled {
 
 
 /* Theme Switch Styles */
-.theme-switch-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-}
+
 
 .theme-switch {
     position: relative;
