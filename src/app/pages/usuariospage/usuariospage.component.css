@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: var(--spacing-xl);
   background-color: var(--background-light);
   min-height: 100%;
