@@ -1,10 +1,11 @@
 .container {
   background-color: rgb(26, 36, 59);
-  width: 100%;
-  padding:20px;
+  padding-top: 40px;
   border-radius: 20px;
-  height: 59%;
+  height: 67%;
   width: auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* Wrapper apenas para limitar a largura do componente filho */
@@ -14,7 +15,8 @@
 
 }
 
-.create-card-section { 
-  padding: 10px;;
+.create-card-section {
+  padding: 10px;
+  ;
   border-radius: 20px;
 }

@@ -88,7 +88,7 @@
 .card-description {
   margin: 0;
   font-size: 0.9rem;
-  color: var(--text-light, #666);
+  color: black;
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2;

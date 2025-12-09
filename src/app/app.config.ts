@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withHashLocation } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
@@ -9,8 +9,8 @@ export const appConfig: ApplicationConfig = {
   providers: [
     // Otimização de detecção de mudanças
     provideZoneChangeDetection({ eventCoalescing: true }),
-    // Configuração de rotas
-    provideRouter(routes),
+    // Configuração de rotas com HashLocationStrategy para APK
+    provideRouter(routes, withHashLocation()),
     // Cliente HTTP para requisições
     provideHttpClient(withInterceptors([httpLoggerInterceptor])),
     // Configuração de gráficos (ng2-charts)
