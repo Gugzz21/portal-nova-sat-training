@@ -1,25 +1,27 @@
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.id }}</td>
-      <td>{{ user.name }}</td>
-      <td>{{ user.email }}</td>
-      <td>
-        <button class="btn-details" (click)="onDetails(user)">Detalhes</button>
-        <button class="btn-edit" (click)="onEdit(user)">Editar</button>
-        <button class="btn-delete" (click)="onDelete(user)">Excluir</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="btn-details" (click)="onDetails(user)">Detalhes</button>
+          <button class="btn-edit" (click)="onEdit(user)">Editar</button>
+          <button class="btn-delete" (click)="onDelete(user)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <app-modal [isOpen]="isModalOpen" title="Confirmar Exclusão" (close)="onCancelDelete()">
   <p>Tem certeza que deseja excluir o usuário <strong>{{ userToDelete?.name }}</strong>?</p>
