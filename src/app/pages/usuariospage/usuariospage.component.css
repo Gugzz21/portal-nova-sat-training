@@ -9,7 +9,8 @@
 }
 
 .content {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   background-color: var(--card-bg);
   border-radius: 20px;
   padding: var(--spacing-xl);

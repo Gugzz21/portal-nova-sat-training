@@ -132,9 +132,13 @@ button {
 
 /* Dark Mode Selected State */
 :host-context(.dark) .nav-link.active {
-  color: var(--sidebar-hover-bg) !important;
+  background-color: var(--sidebar-hover-bg);
+  /* Light blue background */
+  color: var(--sidebar-hover-text) !important;
+  /* Black text */
 }
 
 :host-context(.dark) .nav-link.active .material-icons {
-  color: var(--sidebar-hover-bg) !important;
+  color: var(--sidebar-hover-text) !important;
+  /* Black icon */
 }

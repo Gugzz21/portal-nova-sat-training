@@ -12,7 +12,8 @@
   box-sizing: border-box;
   overflow: hidden;
   /* Impede scroll na janela inteira */
-  width: 900px;
+  width: 100%;
+  /* Fix: Use full width instead of fixed 900px */
 }
 
 /* Painel Branco (Wrapper) */

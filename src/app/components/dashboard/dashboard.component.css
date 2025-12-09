@@ -80,3 +80,22 @@ mat-card-title {
     padding: 10px;
   }
 }
+
+.chart-section mat-card-content {
+  height: 400px;
+  /* Fixed height for chart */
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .chart-section mat-card-content {
+    height: 300px;
+    /* Adjust for mobile */
+  }
+}
+
+/* Center content on large screens */
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}

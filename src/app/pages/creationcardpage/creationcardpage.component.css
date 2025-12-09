@@ -2,8 +2,13 @@
   background-color: rgb(26, 36, 59);
   padding-top: 40px;
   border-radius: 20px;
-  height: 67%;
-  width: auto;
+  min-height: 67%;
+  height: auto;
+  /* Fix: Allow height to grow */
+  width: 100%;
+  /* Fix: Use full width */
+  margin: 0 20px;
+  /* Add margin for centering/spacing */
   display: flex;
   justify-content: center;
 }
