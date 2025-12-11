@@ -50,7 +50,7 @@ Acesse em: http://localhost:4200
 ![Página de Login(Modo Claro)](./src/assets/screenshots/loginClaroCelular.png)
 
 
-![Página de Login(Modo Escuro)](./src/assets/screenshots/loginEscuro.png)
-![Página de Login(Modo Escuro)](./src/assets/screenshots/loginEscuroCelular.png)
+![Página de Login(Modo Escuro)](assets/screenshots/loginEscuro.png)
+![Página de Login(Modo Escuro)](assets/screenshots/loginEscuroCelular.png)
 
 
