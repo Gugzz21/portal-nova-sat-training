@@ -137,12 +137,16 @@ A visão geral do sistema, com cards de métricas e gráficos interativos para a
 
 #### Listagem de Cards
 Visualização em grid dos cards disponíveis no sistema.
+
 <br>
+
 ![Cards (Claro)](src/app/assets/screenshots/telaCardsClaro.png)
 
 #### Criação de Novo Card
 Formulário para adição de novos conteúdos.
+
 <br>
+
 ![Criar Card (Claro)](src/app/assets/screenshots/telaCriacaoCardsClaro.png)
 
 ---
@@ -153,12 +157,16 @@ Módulo administrativo para controle de usuários do sistema.
 
 #### Listagem
 Tabela completa com dados dos usuários.
+
 <br>
+
 ![Usuários (Claro)](src/app/assets/screenshots/telaUsuariosClaro.png)
 
 #### Paginação Personalizada
 Sistema de navegação entre páginas de registros.
+
 <br>
+
 ![Paginação](src/app/assets/screenshots/paginacao.png)
 
 ---
@@ -185,7 +193,9 @@ Páginas de apoio e informações sobre o projeto.
 
 ### 7. Navegação Mobile
 Menu lateral adaptado para dispositivos móveis, garantindo acessibilidade em telas pequenas.
+
 <br>
+
 ![Menu Mobile (Claro)](src/app/assets/screenshots/menuMobileClaro.png)
 
 
