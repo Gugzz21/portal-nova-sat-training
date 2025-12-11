@@ -6,11 +6,13 @@
     <mat-card class="stats-card">
       <mat-card-content>
         <div class="card-flex">
+          <mat-icon class="card-icon" [ngClass]="card.color">{{ card.icon }}</mat-icon>
           <div>
             <p class="card-title">{{ card.title }}</p>
             <h2 class="card-value">{{ card.value }}</h2>
           </div>
-          <mat-icon class="card-icon" [ngClass]="card.color">{{ card.icon }}</mat-icon>
+
+
         </div>
       </mat-card-content>
     </mat-card>
