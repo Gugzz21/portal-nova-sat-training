@@ -19,19 +19,24 @@ O projeto serve como laboratório para que novos integrantes da equipe se famili
 
 ### 1️⃣ Clonar o repositório
 
-http://gitlab.mprj.mp.br/gate/portal-nova-sat-training.git
-
+```bash
+git clone http://gitlab.mprj.mp.br/gate/portal-nova-sat-training.git
 cd portal-nova-sat-training
+```     
 
 ### 2️⃣ Instalar dependências
 
+```bash
 npm install
+```
 
 ### 3️⃣ Rodar localmente
 
+```bash
 npm start
+```
 
-Acesse em: http://localhost:4200
+Acesse em: `http://localhost:4200`
 
 ---
 
@@ -42,15 +47,28 @@ Acesse em: http://localhost:4200
 - `src/app/service`: Serviços para lógica de negócios e chamadas de API
 - `src/assets/data`: Dados mockados (JSON)
 
+---
+
 ## 📸 Screenshots
 
 ### Página de Login (Modos Claro e Escuro)
 
-![Página de Login(Modo Claro)](./src/assets/screenshots/loginClaro.png)
-![Página de Login(Modo Claro)](./src/assets/screenshots/loginClaroCelular.png)
+#### Desktop
+![Página de Login (Modo Claro)](src/app/assets/screenshots/loginClaro.png)
+![Página de Login (Modo Escuro)](src/app/assets/screenshots/LoginEscuro.png)
 
+#### Mobile
+![Página de Login (Modo Claro - Celular)](src/app/assets/screenshots/loginClaroCelular.png)
+![Página de Login (Modo Escuro - Celular)](src/app/assets/screenshots/loginEscuroCelular.png)
 
-![Página de Login(Modo Escuro)](assets/screenshots/loginEscuro.png)
-![Página de Login(Modo Escuro)](assets/screenshots/loginEscuroCelular.png)
+### Página de Registro (Modos Claro e Escuro)
+
+#### Desktop
+![Página de Registro (Modo Claro)](src/app/assets/screenshots/registroClaro.png)
+![Página de Registro (Modo Escuro)](src/app/assets/screenshots/registroEscuro.png)
+
+#### Mobile
+![Página de Registro (Modo Claro - Celular)](src/app/assets/screenshots/registroClaroCelular.png)
+![Página de Registro (Modo Escuro - Celular)](src/app/assets/screenshots/registroEscuroCelular.png)
 
 
