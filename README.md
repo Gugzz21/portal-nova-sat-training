@@ -106,6 +106,8 @@ Confira abaixo como o sistema se comporta em diferentes cenários e dispositivos
 ### 1. Acesso e Autenticação
 Telas de entrada seguras e intuitivas.
 
+<br>
+
 #### Login
 ![Login (Claro)](src/app/assets/screenshots/loginClaro.png)
 ![Login (Mobile)](src/app/assets/screenshots/loginClaroCelular.png)
