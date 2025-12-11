@@ -108,12 +108,10 @@ Telas de entrada seguras e intuitivas.
 
 #### Login
 ![Login (Claro)](src/app/assets/screenshots/loginClaro.png)
-![Login (Escuro)](src/app/assets/screenshots/LoginEscuro.png)
 ![Login (Mobile)](src/app/assets/screenshots/loginClaroCelular.png)
 
 #### Registro
 ![Registro (Claro)](src/app/assets/screenshots/registroClaro.png)
-![Registro (Escuro)](src/app/assets/screenshots/registroEscuro.png)
 
 ---
 
@@ -122,7 +120,6 @@ A visão geral do sistema, com cards de métricas e gráficos interativos para a
 
 #### Desktop
 ![Dashboard (Claro)](src/app/assets/screenshots/telaDashboardClaro.png)
-![Dashboard (Escuro)](src/app/assets/screenshots/telaDashboardEscuro.png)
 
 #### Mobile
 ![Dashboard (Mobile)](src/app/assets/screenshots/telaDashboardClaroCelular.png)
@@ -135,12 +132,10 @@ A visão geral do sistema, com cards de métricas e gráficos interativos para a
 #### Listagem de Cards
 Visualização em grid dos cards disponíveis no sistema.
 ![Cards (Claro)](src/app/assets/screenshots/telaCardsClaro.png)
-![Cards (Escuro)](src/app/assets/screenshots/telaCardsEscuro.png)
 
 #### Criação de Novo Card
 Formulário para adição de novos conteúdos.
 ![Criar Card (Claro)](src/app/assets/screenshots/telaCriacaoCardsClaro.png)
-![Criar Card (Escuro)](src/app/assets/screenshots/telaCriacaoCardsEscuro.png)
 
 ---
 
@@ -150,7 +145,6 @@ Módulo administrativo para controle de usuários do sistema.
 #### Listagem
 Tabela completa com dados dos usuários.
 ![Usuários (Claro)](src/app/assets/screenshots/telaUsuariosClaro.png)
-![Usuários (Escuro)](src/app/assets/screenshots/telaUsuariosEscuro.png)
 
 #### Paginação Personalizada
 Sistema de navegação entre páginas de registros.
@@ -162,7 +156,6 @@ Sistema de navegação entre páginas de registros.
 Demonstração técnica de consumo de dados externos e tratamento de chamadas assíncronas.
 
 ![Externo (Claro)](src/app/assets/screenshots/telaExternoClaro.png)
-![Externo (Escuro)](src/app/assets/screenshots/telaExternoEscuro.png)
 
 ---
 
@@ -171,11 +164,9 @@ Páginas de apoio e informações sobre o projeto.
 
 #### Sobre
 ![Sobre (Claro)](src/app/assets/screenshots/telaSobreClaro.png)
-![Sobre (Escuro)](src/app/assets/screenshots/telaSobreEscuro.png)
 
 #### Contato
 ![Contato (Claro)](src/app/assets/screenshots/telaContatoClaro.png)
-![Contato (Escuro)](src/app/assets/screenshots/telaContatoEscuro.png)
 
 ---
 
@@ -183,6 +174,5 @@ Páginas de apoio e informações sobre o projeto.
 Menu lateral adaptado para dispositivos móveis, garantindo acessibilidade em telas pequenas.
 
 ![Menu Mobile (Claro)](src/app/assets/screenshots/menuMobileClaro.png)
-![Menu Mobile (Escuro)](src/app/assets/screenshots/menuMobileEscuro.png)
 
 
