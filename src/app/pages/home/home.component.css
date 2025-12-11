@@ -1,7 +1,8 @@
 .home-container {
   display: flex;
   min-height: 100vh;
-  background-color: var(--background-light);
+  background-color: rgb(26, 36, 59);
+  ;
 }
 
 .content-area {

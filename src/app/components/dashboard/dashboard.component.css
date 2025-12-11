@@ -1,7 +1,6 @@
 /* Dashboard: ocupar mais espaço vertical e horizontal */
 /* CSS do app-dashboard */
 .container {
-  background-color: transparent;
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
