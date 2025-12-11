@@ -44,4 +44,13 @@ Acesse em: http://localhost:4200
 
 ## 📸 Screenshots
 
-_(Adicione screenshots aqui)_
+### Página de Login (Modos Claro e Escuro)
+
+![Página de Login(Modo Claro)](./src/assets/screenshots/loginClaro.png)
+![Página de Login(Modo Claro)](./src/assets/screenshots/loginClaroCelular.png)
+
+
+![Página de Login(Modo Escuro)](./src/assets/screenshots/loginEscuro.png)
+![Página de Login(Modo Escuro)](./src/assets/screenshots/loginEscuroCelular.png)
+
+
