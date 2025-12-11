@@ -99,26 +99,90 @@ Acesse em: `http://localhost:4200`
 
 ---
 
-## 📸 Screenshots
+## 📸 Galeria do Projeto
 
-### Página de Login (Modos Claro e Escuro)
+Confira abaixo como o sistema se comporta em diferentes cenários e dispositivos.
+
+### 1. Acesso e Autenticação
+Telas de entrada seguras e intuitivas.
+
+#### Login
+![Login (Claro)](src/app/assets/screenshots/loginClaro.png)
+![Login (Escuro)](src/app/assets/screenshots/LoginEscuro.png)
+![Login (Mobile)](src/app/assets/screenshots/loginClaroCelular.png)
+
+#### Registro
+![Registro (Claro)](src/app/assets/screenshots/registroClaro.png)
+![Registro (Escuro)](src/app/assets/screenshots/registroEscuro.png)
+
+---
+
+### 2. Dashboard Principal
+A visão geral do sistema, com cards de métricas e gráficos interativos para análise rápida de dados.
 
 #### Desktop
-![Página de Login (Modo Claro)](src/app/assets/screenshots/loginClaro.png)
-![Página de Login (Modo Escuro)](src/app/assets/screenshots/LoginEscuro.png)
+![Dashboard (Claro)](src/app/assets/screenshots/telaDashboardClaro.png)
+![Dashboard (Escuro)](src/app/assets/screenshots/telaDashboardEscuro.png)
 
 #### Mobile
-![Página de Login (Modo Claro - Celular)](src/app/assets/screenshots/loginClaroCelular.png)
-![Página de Login (Modo Escuro - Celular)](src/app/assets/screenshots/loginEscuroCelular.png)
+![Dashboard (Mobile)](src/app/assets/screenshots/telaDashboardClaroCelular.png)
 
-### Página de Registro (Modos Claro e Escuro)
+---
 
-#### Desktop
-![Página de Registro (Modo Claro)](src/app/assets/screenshots/registroClaro.png)
-![Página de Registro (Modo Escuro)](src/app/assets/screenshots/registroEscuro.png)
+### 3. Gerenciamento de Cards
+Área destinada ao controle de conteúdo informativo do portal.
 
-#### Mobile
-![Página de Registro (Modo Claro - Celular)](src/app/assets/screenshots/registroClaroCelular.png)
-![Página de Registro (Modo Escuro - Celular)](src/app/assets/screenshots/registroEscuroCelular.png)
+#### Listagem de Cards
+Visualização em grid dos cards disponíveis no sistema.
+![Cards (Claro)](src/app/assets/screenshots/telaCardsClaro.png)
+![Cards (Escuro)](src/app/assets/screenshots/telaCardsEscuro.png)
+
+#### Criação de Novo Card
+Formulário para adição de novos conteúdos.
+![Criar Card (Claro)](src/app/assets/screenshots/telaCriacaoCardsClaro.png)
+![Criar Card (Escuro)](src/app/assets/screenshots/telaCriacaoCardsEscuro.png)
+
+---
+
+### 4. Gestão de Usuários
+Módulo administrativo para controle de usuários do sistema.
+
+#### Listagem
+Tabela completa com dados dos usuários.
+![Usuários (Claro)](src/app/assets/screenshots/telaUsuariosClaro.png)
+![Usuários (Escuro)](src/app/assets/screenshots/telaUsuariosEscuro.png)
+
+#### Paginação Personalizada
+Sistema de navegação entre páginas de registros.
+![Paginação](src/app/assets/screenshots/paginacao.png)
+
+---
+
+### 5. Integrações (API Externa)
+Demonstração técnica de consumo de dados externos e tratamento de chamadas assíncronas.
+
+![Externo (Claro)](src/app/assets/screenshots/telaExternoClaro.png)
+![Externo (Escuro)](src/app/assets/screenshots/telaExternoEscuro.png)
+
+---
+
+### 6. Institucional
+Páginas de apoio e informações sobre o projeto.
+
+#### Sobre
+![Sobre (Claro)](src/app/assets/screenshots/telaSobreClaro.png)
+![Sobre (Escuro)](src/app/assets/screenshots/telaSobreEscuro.png)
+
+#### Contato
+![Contato (Claro)](src/app/assets/screenshots/telaContatoClaro.png)
+![Contato (Escuro)](src/app/assets/screenshots/telaContatoEscuro.png)
+
+---
+
+### 7. Navegação Mobile
+Menu lateral adaptado para dispositivos móveis, garantindo acessibilidade em telas pequenas.
+
+![Menu Mobile (Claro)](src/app/assets/screenshots/menuMobileClaro.png)
+![Menu Mobile (Escuro)](src/app/assets/screenshots/menuMobileEscuro.png)
 
 
