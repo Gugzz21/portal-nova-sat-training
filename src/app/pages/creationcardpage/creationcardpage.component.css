@@ -4,13 +4,11 @@
   border-radius: 20px;
   min-height: 67%;
   height: auto;
-  /* Fix: Allow height to grow */
   width: 100%;
-  /* Fix: Use full width */
   margin: 0 20px;
-  /* Add margin for centering/spacing */
   display: flex;
   justify-content: center;
+
 }
 
 /* Wrapper apenas para limitar a largura do componente filho */
