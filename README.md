@@ -154,9 +154,8 @@ Formulário para adição de novos conteúdos.
 ### 4. Gestão de Usuários
 <br>
 Módulo administrativo para controle de usuários do sistema.
-
-#### Listagem
-Tabela completa com dados dos usuários.
+<br> 
+CRUD(Create, Read, Update, Delete) de usuários.
 
 <br>
 
