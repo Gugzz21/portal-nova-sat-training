@@ -195,6 +195,21 @@ Menu lateral adaptado para dispositivos móveis, garantindo acessibilidade em te
 
 <br>
 
-![Menu Mobile (Claro)](src/app/assets/screenshots/menuMobileClaro.png)
+
+---
+
+### 8. Modo Escuro
+O portal oferece suporte nativo ao tema escuro, garantindo conforto visual e elegância.
+
+<br>
+
+#### Dashboard
+![Dashboard (Escuro)](src/app/assets/screenshots/telaDashboardEscuro.png)
+
+#### Cards
+![Cards (Escuro)](src/app/assets/screenshots/telaCardsEscuro.png)
+
+#### Contato
+![Contato (Escuro)](src/app/assets/screenshots/telaContatoEscuro.png)
 
 
