@@ -12,6 +12,10 @@ button {
   color: var(--text-color) !important;
 }
 
+.toggle-btn {
+  color: white !important;
+}
+
 .nav-list {
   display: flex;
   flex-direction: column;
