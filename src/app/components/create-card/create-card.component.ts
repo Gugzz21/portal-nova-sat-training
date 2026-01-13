@@ -20,21 +20,21 @@ export class CreateCardComponent {
 
   constructor(private fb: FormBuilder, private cardService: CardService) {
     this.cardForm = this.fb.group({
-      title: ['', Validators.required],
-      description: ['', Validators.required],
-      icon: ['', Validators.required],
+      titulo: ['', Validators.required],
+      descricao: ['', Validators.required],
+      imagem: ['', Validators.required],
       // Adicionamos um campo para salvar se é 'image' ou 'icon'
-      type: ['image', Validators.required]
+      role: ['image', Validators.required]
     });
   }
 
   // Função para trocar o modo de input
-  switchInputType(type: 'image' | 'icon') {
-    this.inputType = type;
-    this.cardForm.get('type')?.setValue(type);
+  switchInputType(role: 'image' | 'icon') {
+    this.inputType = role;
+    this.cardForm.get('role')?.setValue(role);
 
     // Limpa o valor anterior do ícone para evitar erros
-    this.cardForm.get('icon')?.setValue('');
+    this.cardForm.get('imagem')?.setValue('');
     this.iconPreview = null;
   }
 
@@ -44,7 +44,7 @@ export class CreateCardComponent {
       const reader = new FileReader();
       reader.onload = (e) => {
         this.iconPreview = reader.result;
-        this.cardForm.patchValue({ icon: reader.result });
+        this.cardForm.patchValue({ imagem: reader.result });
       };
       reader.readAsDataURL(file);
     }
@@ -53,11 +53,18 @@ export class CreateCardComponent {
   createCard() {
     if (this.cardForm.valid) {
       // Envia o objeto completo (agora inclui o campo 'type')
-      this.cardService.addCard(this.cardForm.value);
-
-      this.cardForm.reset({ type: 'image' }); // Reseta mantendo o padrão imagem
-      this.inputType = 'image';
-      this.iconPreview = null;
+      this.cardService.criarCard(this.cardForm.value).subscribe({
+        next: () => {
+          this.cardForm.reset({ role: 'image' }); // Reseta mantendo o padrão imagem
+          this.inputType = 'image';
+          this.iconPreview = null;
+          alert('Card criado com sucesso!');
+        },
+        error: (err) => {
+          console.error('Erro ao criar card:', err);
+          alert('Erro ao criar card: ' + JSON.stringify(err));
+        }
+      });
     }
   }
 }

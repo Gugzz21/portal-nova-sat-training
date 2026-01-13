@@ -4,6 +4,7 @@ import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { httpLoggerInterceptor } from './core/interceptors/http-logger.interceptor';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     // Configuração de rotas com HashLocationStrategy para APK
     provideRouter(routes, withHashLocation()),
     // Cliente HTTP para requisições
-    provideHttpClient(withInterceptors([httpLoggerInterceptor])),
+    provideHttpClient(withInterceptors([httpLoggerInterceptor, authInterceptor])),
     // Configuração de gráficos (ng2-charts)
     provideCharts(withDefaultRegisterables())
   ]

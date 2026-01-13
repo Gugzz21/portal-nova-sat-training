@@ -4,12 +4,12 @@
 export interface Card {
   id?: number;
   /** Título do card */
-  title: string;
+  titulo: string;
   /** Descrição do card */
-  description: string;
+  descricao: string;
   /** URL ou Base64 do ícone */
-  icon: string;
+  imagem: string;
 
-  // O '?' serve para dizer que é opcional (caso você tenha cards antigos sem tipo)
-  type?: 'image' | 'icon';
+  // Type was 'type' in frontend but 'role' in backend
+  role?: 'image' | 'icon';
 }

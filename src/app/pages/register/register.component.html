@@ -13,9 +13,9 @@
         <h2>Criar Conta</h2>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" formControlName="name" placeholder="Seu nome completo">
-                <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="error">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" formControlName="nome" placeholder="Seu nome completo">
+                <div *ngIf="registerForm.get('nome')?.invalid && registerForm.get('nome')?.touched" class="error">
                     Nome é obrigatório.
                 </div>
             </div>
@@ -29,11 +29,9 @@
             </div>
 
             <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" formControlName="password"
-                    placeholder="Sua senha (min. 6 caracteres)">
-                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
-                    class="error">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" formControlName="senha" placeholder="Sua senha (min. 6 caracteres)">
+                <div *ngIf="registerForm.get('senha')?.invalid && registerForm.get('senha')?.touched" class="error">
                     Senha deve ter no mínimo 6 caracteres.
                 </div>
             </div>

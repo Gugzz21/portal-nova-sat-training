@@ -14,15 +14,15 @@ import { CommonModule } from '@angular/common';
 })
 export class CardpageComponent implements OnInit {
   /** Observable que contém a lista de cards */
-    cards$: Observable<Card[]> | undefined;
+  cards$: Observable<Card[]> | undefined;
 
-    constructor(private cardService: CardService) {}
+  constructor(private cardService: CardService) { }
 
-    /**
-     * Inicializa o componente carregando todos os cards do serviço.
-     */
-    ngOnInit(): void {
-      this.cards$ = this.cardService.getAllCards();
-    }
+  /**
+   * Inicializa o componente carregando todos os cards do serviço.
+   */
+  ngOnInit(): void {
+    this.cards$ = this.cardService.listarCards();
+  }
 
 }

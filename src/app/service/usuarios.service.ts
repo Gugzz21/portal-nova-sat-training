@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, BehaviorSubject, of, throwError } from 'rxjs';
+import { Observable, catchError, BehaviorSubject, of, throwError, tap } from 'rxjs';
 import { User } from '../model/user';
 import { environment } from '../../enviroment';
 @Injectable({
@@ -34,7 +34,22 @@ export class UsuariosService {
   }
 
   autenticarUsuario(user: User): Observable<User> {
-    return this.http.post<User>(`${this.apiUsuario}/login`, user).pipe(catchError(this.errorHandler));
+    const loginPayload = {
+      email: user.email,
+      password: user.senha
+    };
+    return this.http.post<User>(`${this.apiUsuario}/login`, loginPayload).pipe(
+      tap((response: User) => {
+        console.log('[UsuariosService] Login response:', response);
+        if (response.token) {
+          console.log('[UsuariosService] Saving token to localStorage');
+          localStorage.setItem('token', response.token);
+        } else {
+          console.warn('[UsuariosService] Token not found in login response');
+        }
+      }),
+      catchError(this.errorHandler)
+    );
   }
 
   errorHandler(error: any): Observable<any> {

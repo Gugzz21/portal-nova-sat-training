@@ -3,18 +3,18 @@
   <form [formGroup]="cardForm" (ngSubmit)="createCard()" class="create-card-form">
 
     <div class="form-group">
-      <label for="title">Título</label>
-      <input id="title" type="text" formControlName="title" placeholder="Ex: Novos Projetos">
-      @if (cardForm.get('title')?.invalid && cardForm.get('title')?.touched) {
-        <div class="error">Título é obrigatório.</div>
+      <label for="titulo">Título</label>
+      <input id="titulo" type="text" formControlName="titulo" placeholder="Ex: Novos Projetos">
+      @if (cardForm.get('titulo')?.invalid && cardForm.get('titulo')?.touched) {
+      <div class="error">Título é obrigatório.</div>
       }
     </div>
 
     <div class="form-group">
-      <label for="description">Descrição</label>
-      <textarea id="description" formControlName="description" rows="3" placeholder="Descrição do card"></textarea>
-      @if (cardForm.get('description')?.invalid && cardForm.get('description')?.touched) {
-        <div class="error">Descrição é obrigatória.</div>
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" formControlName="descricao" rows="3" placeholder="Descrição do card"></textarea>
+      @if (cardForm.get('descricao')?.invalid && cardForm.get('descricao')?.touched) {
+      <div class="error">Descrição é obrigatória.</div>
       }
     </div>
 
@@ -35,32 +35,32 @@
     <div class="form-group">
 
       @if (inputType === 'image') {
-        <label for="iconFile">Selecione a Imagem</label>
-        <input id="iconFile" type="file" (change)="onFileSelected($event)" accept="image/*" class="file-input">
+      <label for="iconFile">Selecione a Imagem</label>
+      <input id="iconFile" type="file" (change)="onFileSelected($event)" accept="image/*" class="file-input">
 
-        @if (iconPreview) {
-          <div class="preview-container">
-            <img [src]="iconPreview" alt="Preview" class="icon-preview">
-          </div>
-        }
+      @if (iconPreview) {
+      <div class="preview-container">
+        <img [src]="iconPreview" alt="Preview" class="icon-preview">
+      </div>
+      }
       }
 
       @if (inputType === 'icon') {
-        <label for="iconText">Nome do Ícone (ex: home, star, settings)</label>
-        <div class="input-with-hint">
-          <input id="iconText" type="text" formControlName="icon" placeholder="Digite o nome do ícone">
-          <small><a href="https://fonts.google.com/icons" target="_blank">Ver lista de ícones</a></small>
-        </div>
+      <label for="iconText">Nome do Ícone (ex: home, star, settings)</label>
+      <div class="input-with-hint">
+        <input id="iconText" type="text" formControlName="imagem" placeholder="Digite o nome do ícone">
+        <small><a href="https://fonts.google.com/icons" target="_blank">Ver lista de ícones</a></small>
+      </div>
 
-        @if (cardForm.get('icon')?.value) {
-          <div class="preview-container">
-            <mat-icon class="icon-preview-mat">{{ cardForm.get('icon')?.value }}</mat-icon>
-          </div>
-        }
+      @if (cardForm.get('imagem')?.value) {
+      <div class="preview-container">
+        <mat-icon class="icon-preview-mat">{{ cardForm.get('imagem')?.value }}</mat-icon>
+      </div>
+      }
       }
 
-      @if (cardForm.get('icon')?.invalid && cardForm.get('icon')?.touched) {
-        <div class="error">O ícone/imagem é obrigatório.</div>
+      @if (cardForm.get('imagem')?.invalid && cardForm.get('imagem')?.touched) {
+      <div class="error">O ícone/imagem é obrigatório.</div>
       }
     </div>
 

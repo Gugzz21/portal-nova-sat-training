@@ -10,10 +10,10 @@ import { MatIconModule } from '@angular/material/icon'; // <--- IMPORTANTE
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() title: string = '';
-  @Input() description: string = '';
-  @Input() icon: string = '';
+  @Input() titulo: string = '';
+  @Input() descricao: string = '';
+  @Input() imagem: string = '';
 
   /** Define se é 'image' ou 'icon' (padrão 'image' para compatibilidade) */
-  @Input() type: 'image' | 'icon' = 'image';
+  @Input() role: 'image' | 'icon' = 'image';
 }

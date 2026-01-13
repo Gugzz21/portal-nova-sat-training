@@ -25,9 +25,9 @@ export class RegisterComponent {
 
     constructor() {
         this.registerForm = this.fb.group({
-            name: ['', [Validators.required]],
+            nome: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]]
+            senha: ['', [Validators.required, Validators.minLength(6)]]
         });
         this.themeService.currentTheme$.subscribe(theme => {
             this.isDarkTheme = theme === 'dark';
@@ -52,7 +52,7 @@ export class RegisterComponent {
             });
         }
     }
-     toggleTheme() {
+    toggleTheme() {
         this.themeService.toggleTheme();
     }
 }

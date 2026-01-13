@@ -21,7 +21,7 @@ export class UsuariosFormComponent implements OnInit {
   ngOnInit() {
     // Inicializa o formulário com validações
     this.form = this.fb.group({
-      name: [this.user?.name || '', Validators.required],
+      nome: [this.user?.nome || '', Validators.required],
       email: [this.user?.email || '', [Validators.required, Validators.email]]
     });
   }

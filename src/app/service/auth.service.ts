@@ -1,75 +1,44 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { UsuariosService } from './usuarios.service';
+import { User } from '../model/user';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
 
-    private tokenKey = 'auth_token';
-    private usersKey = 'registered_users';
+    private tokenKey = 'token';
 
-    constructor() { }
+    constructor(private usuariosService: UsuariosService) { }
 
     /**
-     * Simula uma chamada de API de login.
+     * Realiza o login utilizando o UsuariosService.
      * @param email Email do usuário
      * @param password Senha do usuário
      * @returns Observable<boolean>
      */
     login(email: string, password: string): Observable<boolean> {
-        return new Observable(observer => {
-            setTimeout(() => {
-                const users = this.getUsers();
-                const user = users.find(u => u.email === email && u.password === password);
+        // Cria um objeto User parcial apenas com email e senha para autenticação
+        const user: User = { email, senha: password } as User;
 
-                if (user) {
-                    localStorage.setItem(this.tokenKey, 'fake-jwt-token-' + Math.random());
-                    observer.next(true);
-                    observer.complete();
-                } else {
-                    observer.error(new Error('Credenciais inválidas'));
-                }
-            }, 1500);
-        });
+        return this.usuariosService.autenticarUsuario(user).pipe(
+            map(response => {
+                // A verificação e salvamento do token já são feitos no UsuariosService
+                // Aqui apenas retornamos true se o login foi bem sucedido (assumindo que se não lançou erro, foi sucesso)
+                // Opcionalmente podemos verificar se o token está no localStorage
+                return !!localStorage.getItem(this.tokenKey);
+            })
+        );
     }
 
     /**
      * Registra um novo usuário.
      * @param user Objeto do usuário
-     * @returns Observable<boolean>
+     * @returns Observable<User>
      */
-    register(user: any): Observable<boolean> {
-        return new Observable(observer => {
-            setTimeout(() => {
-                const users = this.getUsers();
-                if (users.find(u => u.email === user.email)) {
-                    observer.error(new Error('Email já cadastrado'));
-                    return;
-                }
-
-                users.push(user);
-                localStorage.setItem(this.usersKey, JSON.stringify(users));
-                observer.next(true);
-                observer.complete();
-            }, 1000);
-        });
-    }
-
-    private getUsers(): any[] {
-        const users = localStorage.getItem(this.usersKey);
-        if (users) {
-            return JSON.parse(users);
-        }
-
-        // Cria usuário padrão se não houver usuários
-        const defaultUser = {
-            email: 'admin@email.com',
-            password: '123456',
-            name: 'Admin'
-        };
-        localStorage.setItem(this.usersKey, JSON.stringify([defaultUser]));
-        return [defaultUser];
+    register(user: User): Observable<User> {
+        return this.usuariosService.criarUsuario(user);
     }
 
     /**

@@ -9,7 +9,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <td>{{ user.name }}</td>
+        <td>{{ user.nome }}</td>
         <td>{{ user.email }}</td>
         <td>
           <button class="btn-details" (click)="onDetails(user)">Detalhes</button>
@@ -22,7 +22,7 @@
 </div>
 
 <app-modal [isOpen]="isModalOpen" title="Confirmar Exclusão" (close)="onCancelDelete()">
-  <p>Tem certeza que deseja excluir o usuário <strong>{{ userToDelete?.name }}</strong>?</p>
+  <p>Tem certeza que deseja excluir o usuário <strong>{{ userToDelete?.nome }}</strong>?</p>
   <div class="modal-actions">
     <button class="btn-danger" (click)="onConfirmDelete()">Sim</button>
     <button class="btn-secondary" (click)="onCancelDelete()">Não</button>
@@ -31,6 +31,6 @@
 
 <app-modal [isOpen]="isDetailsModalOpen" title="Detalhes do Usuário" (close)="onCloseDetails()">
   <p><strong>ID:</strong> {{ userForDetails?.id }}</p>
-  <p><strong>Nome:</strong> {{ userForDetails?.name }}</p>
+  <p><strong>Nome:</strong> {{ userForDetails?.nome }}</p>
   <p><strong>Email:</strong> {{ userForDetails?.email }}</p>
 </app-modal>

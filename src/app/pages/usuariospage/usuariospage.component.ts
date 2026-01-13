@@ -30,7 +30,7 @@ export class UsuariospageComponent implements OnInit {
 
   // Carrega os usuários do serviço
   loadUsers() {
-    this.usuariosService.getUsers().subscribe(users => {
+    this.usuariosService.listarUsuarios().subscribe(users => {
       this.users = users;
       this.filteredUsers = users;
       this.onSearch();
@@ -51,17 +51,17 @@ export class UsuariospageComponent implements OnInit {
 
   // Deleta um usuário
   onDelete(id: number) {
-    this.usuariosService.deleteUser(id).subscribe();
+    this.usuariosService.deletarUsuario(id).subscribe();
   }
 
   // Salva (cria ou atualiza) um usuário
   onSave(userData: Partial<User>) {
     if (this.currentUser) {
-      this.usuariosService.updateUser(userData as User).subscribe(() => {
+      this.usuariosService.atualizarUsuario(userData as User).subscribe(() => {
         this.isEditing = false;
       });
     } else {
-      this.usuariosService.addUser(userData as Omit<User, 'id'>).subscribe(() => {
+      this.usuariosService.criarUsuario(userData as User).subscribe(() => {
         this.isEditing = false;
       });
     }
@@ -75,7 +75,7 @@ export class UsuariospageComponent implements OnInit {
   // Filtra usuários com base no termo de busca
   onSearch() {
     this.filteredUsers = this.users.filter(user =>
-      user.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      user.nome.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       user.email.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
     this.currentPage = 1;
