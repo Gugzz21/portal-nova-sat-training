@@ -10,6 +10,6 @@ export interface Card {
   /** URL ou Base64 do ícone */
   imagem: string;
 
-  // Type was 'type' in frontend but 'role' in backend
-  role?: 'image' | 'icon';
+  // Role deve corresponder ao Enum do backend
+  role: 'ROLE_ABERTO' | 'ROLE_FINALIZADO' | 'ROLE_CANCELADO';
 }

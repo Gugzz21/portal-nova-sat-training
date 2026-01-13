@@ -22,7 +22,8 @@ export class UsuariosFormComponent implements OnInit {
     // Inicializa o formulário com validações
     this.form = this.fb.group({
       nome: [this.user?.nome || '', Validators.required],
-      email: [this.user?.email || '', [Validators.required, Validators.email]]
+      email: [this.user?.email || '', [Validators.required, Validators.email]],
+      senha: ['', this.user ? [] : [Validators.required, Validators.minLength(6)]] // Senha obrigatória apenas na criação
     });
   }
 

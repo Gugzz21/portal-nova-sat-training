@@ -38,9 +38,13 @@ export const routes: Routes = [
         path: 'cards',
         loadComponent: () => import('./pages/cardpage/cardpage.component').then(mod => mod.CardpageComponent)
       },
-      // Rota para a página de Criação de Cards
+      // Rota para a página de Criação de Cards (suporta edição com parâmetro id opcional)
       {
         path: 'cards-create',
+        loadComponent: () => import('./pages/creationcardpage/creationcardpage.component').then(mod => mod.CreationcardpageComponent)
+      },
+      {
+        path: 'cards-create/:id',
         loadComponent: () => import('./pages/creationcardpage/creationcardpage.component').then(mod => mod.CreationcardpageComponent)
       },
       // Rota para a página de Usuários

@@ -1,11 +1,14 @@
 <div class="card-item">
   <div class="card-header">
-    <div class="card-icon-container">
-      @if (role === 'image') {
-      <img [src]="imagem" alt="ícone do card" class="card-img">
-      }
+    <div class="card-status-badge" [class]="role.toLowerCase()">
+      {{ role === 'ROLE_ABERTO' ? 'Aberto' : role === 'ROLE_FINALIZADO' ? 'Finalizado' : 'Cancelado' }}
+    </div>
 
-      @if (role === 'icon') {
+    <div class="card-icon-container">
+      <!-- Lógica simples: se tem http é imagem, senão é ícone text -->
+      @if (imagem.includes('/') || imagem.includes('data:')) {
+      <img [src]="imagem" alt="ícone do card" class="card-img">
+      } @else {
       <mat-icon class="card-mat-icon">{{ imagem }}</mat-icon>
       }
     </div>
@@ -14,5 +17,14 @@
       <h3 class="card-title">{{ titulo }}</h3>
       <p class="card-description">{{ descricao }}</p>
     </div>
+  </div>
+
+  <div class="card-actions">
+    <button class="btn-icon edit" (click)="onEdit()" title="Editar">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button class="btn-icon delete" (click)="onDelete()" title="Excluir">
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
 </div>

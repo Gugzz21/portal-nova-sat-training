@@ -9,8 +9,8 @@
       <div class="cards-grid">
         <ng-container *ngIf="(cards$ | async) as cards">
 
-          <app-card *ngFor="let card of cards" [titulo]="card.titulo" [descricao]="card.descricao"
-            [imagem]="card.imagem" [role]="card.role ?? 'image'">
+          <app-card *ngFor="let card of cards" [id]="card.id" [titulo]="card.titulo" [descricao]="card.descricao"
+            [imagem]="card.imagem" [role]="card.role" (edit)="onEdit(card)" (delete)="onDelete(card)">
           </app-card>
 
           <p class="empty" *ngIf="cards.length === 0">

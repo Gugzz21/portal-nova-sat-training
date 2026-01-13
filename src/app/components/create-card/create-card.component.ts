@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon'; // Importante para o preview
 import { CardService } from '../../service/card.service';
 import { CommonModule } from '@angular/common'; // Caso precise de diretivas comuns
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-card',
@@ -11,29 +12,77 @@ import { CommonModule } from '@angular/common'; // Caso precise de diretivas com
   templateUrl: './create-card.component.html',
   styleUrls: ['./create-card.component.css']
 })
-export class CreateCardComponent {
+export class CreateCardComponent implements OnInit {
   cardForm: FormGroup;
   iconPreview: string | ArrayBuffer | null = null;
+  isEditing = false;
+  cardId: number | null = null;
 
-  // Controla qual input está visível
+  // Controla o tipo de input para a imagem (apenas UI)
   inputType: 'image' | 'icon' = 'image';
 
-  constructor(private fb: FormBuilder, private cardService: CardService) {
+  // Opções de Role para o select
+  roleOptions = [
+    { value: 'ROLE_ABERTO', label: 'Aberto' },
+    { value: 'ROLE_FINALIZADO', label: 'Finalizado' },
+    { value: 'ROLE_CANCELADO', label: 'Cancelado' }
+  ];
+
+  constructor(
+    private fb: FormBuilder,
+    private cardService: CardService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     this.cardForm = this.fb.group({
       titulo: ['', Validators.required],
       descricao: ['', Validators.required],
       imagem: ['', Validators.required],
-      // Adicionamos um campo para salvar se é 'image' ou 'icon'
-      role: ['image', Validators.required]
+      role: ['ROLE_ABERTO', Validators.required]
     });
   }
 
-  // Função para trocar o modo de input
-  switchInputType(role: 'image' | 'icon') {
-    this.inputType = role;
-    this.cardForm.get('role')?.setValue(role);
+  ngOnInit(): void {
+    // Verifica se há um ID na rota para edição
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        this.isEditing = true;
+        this.cardId = +id;
+        this.loadCardData(this.cardId);
+      }
+    });
+  }
 
-    // Limpa o valor anterior do ícone para evitar erros
+  loadCardData(id: number) {
+    this.cardService.obterCardPorId(id).subscribe({
+      next: (card) => {
+        this.cardForm.patchValue({
+          titulo: card.titulo,
+          descricao: card.descricao,
+          imagem: card.imagem,
+          role: card.role
+        });
+
+        // Tenta inferir o tipo de imagem
+        if (card.imagem && (card.imagem.includes('/') || card.imagem.includes('data:'))) {
+          this.inputType = 'image';
+          this.iconPreview = card.imagem;
+        } else {
+          this.inputType = 'icon';
+          this.iconPreview = null; // Ícones Material não usam preview de imagem
+        }
+      },
+      error: (err) => {
+        console.error('Erro ao carregar card:', err);
+        alert('Erro ao carregar dados do card.');
+      }
+    });
+  }
+
+  // Alterna entre upload de imagem e texto para ícone (apenas UI)
+  switchInputType(type: 'image' | 'icon') {
+    this.inputType = type;
     this.cardForm.get('imagem')?.setValue('');
     this.iconPreview = null;
   }
@@ -50,21 +99,40 @@ export class CreateCardComponent {
     }
   }
 
-  createCard() {
+  saveCard() {
     if (this.cardForm.valid) {
-      // Envia o objeto completo (agora inclui o campo 'type')
-      this.cardService.criarCard(this.cardForm.value).subscribe({
-        next: () => {
-          this.cardForm.reset({ role: 'image' }); // Reseta mantendo o padrão imagem
-          this.inputType = 'image';
-          this.iconPreview = null;
-          alert('Card criado com sucesso!');
-        },
-        error: (err) => {
-          console.error('Erro ao criar card:', err);
-          alert('Erro ao criar card: ' + JSON.stringify(err));
-        }
-      });
+      const cardData = this.cardForm.value;
+
+      if (this.isEditing && this.cardId) {
+        // Atualizar
+        const updatedCard = { ...cardData, id: this.cardId };
+        this.cardService.atualizarCard(updatedCard).subscribe({
+          next: () => {
+            alert('Card atualizado com sucesso!');
+            this.router.navigate(['/cards']);
+          },
+          error: (err) => {
+            console.error('Erro ao atualizar card:', err);
+            alert('Erro ao atualizar card: ' + JSON.stringify(err));
+          }
+        });
+      } else {
+        // Criar
+        this.cardService.criarCard(cardData).subscribe({
+          next: () => {
+            alert('Card criado com sucesso!');
+            // Reset form or navigate? Usually users want to create more or go back.
+            // Let's reset for creation flow.
+            this.cardForm.reset({ role: 'ROLE_ABERTO' });
+            this.inputType = 'image';
+            this.iconPreview = null;
+          },
+          error: (err) => {
+            console.error('Erro ao criar card:', err);
+            alert('Erro ao criar card: ' + JSON.stringify(err));
+          }
+        });
+      }
     }
   }
 }

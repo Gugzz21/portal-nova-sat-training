@@ -22,6 +22,10 @@ export class CardService {
     return this.http.get<Card[]>(`${this.apiCard}/listar`).pipe(catchError(this.errorHandler));
   }
 
+  obterCardPorId(id: number): Observable<Card> {
+    return this.http.get<Card>(`${this.apiCard}/${id}`).pipe(catchError(this.errorHandler));
+  }
+
   listarCardPorId(id: number): Observable<Card> {
     return this.http.get<Card>(`${this.apiCard}/listarPorId/${id}`).pipe(catchError(this.errorHandler));
   }

@@ -51,7 +51,9 @@ export class UsuariospageComponent implements OnInit {
 
   // Deleta um usuário
   onDelete(id: number) {
-    this.usuariosService.deletarUsuario(id).subscribe();
+    this.usuariosService.deletarUsuario(id).subscribe(() => {
+      this.loadUsers(); // Recarrega a lista após deletar
+    });
   }
 
   // Salva (cria ou atualiza) um usuário
@@ -59,10 +61,12 @@ export class UsuariospageComponent implements OnInit {
     if (this.currentUser) {
       this.usuariosService.atualizarUsuario(userData as User).subscribe(() => {
         this.isEditing = false;
+        this.loadUsers(); // Recarrega a lista após atualizar
       });
     } else {
       this.usuariosService.criarUsuario(userData as User).subscribe(() => {
         this.isEditing = false;
+        this.loadUsers(); // Recarrega a lista após criar
       });
     }
   }

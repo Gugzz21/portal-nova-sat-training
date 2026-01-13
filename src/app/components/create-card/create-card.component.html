@@ -1,6 +1,6 @@
 <div class="create-card-container">
-  <h1>Criar Novo Card</h1>
-  <form [formGroup]="cardForm" (ngSubmit)="createCard()" class="create-card-form">
+  <h1>{{ isEditing ? 'Editar Card' : 'Criar Novo Card' }}</h1>
+  <form [formGroup]="cardForm" (ngSubmit)="saveCard()" class="create-card-form">
 
     <div class="form-group">
       <label for="titulo">Título</label>
@@ -15,6 +15,18 @@
       <textarea id="descricao" formControlName="descricao" rows="3" placeholder="Descrição do card"></textarea>
       @if (cardForm.get('descricao')?.invalid && cardForm.get('descricao')?.touched) {
       <div class="error">Descrição é obrigatória.</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="role">Status (Role)</label>
+      <select id="role" formControlName="role">
+        @for (option of roleOptions; track option.value) {
+        <option [value]="option.value">{{ option.label }}</option>
+        }
+      </select>
+      @if (cardForm.get('role')?.invalid && cardForm.get('role')?.touched) {
+      <div class="error">O status é obrigatório.</div>
       }
     </div>
 
@@ -64,6 +76,7 @@
       }
     </div>
 
-    <button type="submit" [disabled]="cardForm.invalid">Adicionar Card</button>
+    <button type="submit" [disabled]="cardForm.invalid">{{ isEditing ? 'Salvar Alterações' : 'Adicionar Card'
+      }}</button>
   </form>
 </div>
