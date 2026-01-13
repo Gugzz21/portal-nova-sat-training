@@ -2,6 +2,7 @@
  * Interface que representa a estrutura de um Card.
  */
 export interface Card {
+  id?: number;
   /** Título do card */
   title: string;
   /** Descrição do card */
