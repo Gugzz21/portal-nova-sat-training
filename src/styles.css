@@ -134,3 +134,21 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* Dark Mode Overrides for Angular Material Overlays */
+.dark .mat-mdc-select-panel {
+  background-color: var(--card-bg) !important;
+}
+
+.dark .mat-mdc-option {
+  color: var(--text-color) !important;
+}
+
+.dark .mat-mdc-option:hover,
+.dark .mat-mdc-option.mat-mdc-option-active {
+  background-color: var(--sidebar-hover-bg) !important;
+}
+
+.dark .mat-mdc-option.mat-mdc-selected:not(.mat-mdc-option-multiple) {
+  background-color: var(--sidebar-hover-bg);
+}
