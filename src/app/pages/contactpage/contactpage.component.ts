@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
+import { ThemeService } from '../../service/theme.service';
+
 @Component({
   selector: 'app-contactpage',
   standalone: true,
@@ -12,13 +14,18 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 export class ContactpageComponent {
   /** Formulário reativo de contato */
   contactForm: FormGroup;
+  isDarkTheme = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private themeService: ThemeService) {
     // Inicialização do formulário com validações
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       message: ['', Validators.required]
+    });
+
+    this.themeService.currentTheme$.subscribe(theme => {
+      this.isDarkTheme = theme === 'dark';
     });
   }
 
