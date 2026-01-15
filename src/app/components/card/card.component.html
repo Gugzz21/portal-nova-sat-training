@@ -1,9 +1,5 @@
 <div class="card-item">
-  <div class="card-header">
-    <div class="card-status-badge" [class]="role.toLowerCase()">
-      {{ role === 'ROLE_ABERTO' ? 'Aberto' : role === 'ROLE_FINALIZADO' ? 'Finalizado' : 'Cancelado' }}
-    </div>
-
+  <div class="card-body">
     <div class="card-icon-container">
       <!-- Lógica simples: se tem http é imagem, senão é ícone text -->
       @if (imagem.includes('/') || imagem.includes('data:')) {
@@ -19,12 +15,18 @@
     </div>
   </div>
 
-  <div class="card-actions">
-    <button class="btn-icon edit" (click)="onEdit()" title="Editar">
-      <mat-icon>edit</mat-icon>
-    </button>
-    <button class="btn-icon delete" (click)="onDelete()" title="Excluir">
-      <mat-icon>delete</mat-icon>
-    </button>
+  <div class="card-footer">
+    <div class="card-status-badge" [class]="role.toLowerCase()">
+      {{ role === 'ROLE_ABERTO' ? 'Aberto' : role === 'ROLE_FINALIZADO' ? 'Finalizado' : 'Cancelado' }}
+    </div>
+
+    <div class="card-actions">
+      <button class="btn-icon edit" (click)="onEdit()" title="Editar">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button class="btn-icon delete" (click)="onDelete()" title="Excluir">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
   </div>
 </div>

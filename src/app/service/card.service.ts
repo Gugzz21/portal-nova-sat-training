@@ -23,7 +23,7 @@ export class CardService {
   }
 
   obterCardPorId(id: number): Observable<Card> {
-    return this.http.get<Card>(`${this.apiCard}/${id}`).pipe(catchError(this.errorHandler));
+    return this.http.get<Card>(`${this.apiCard}/listarPorId/${id}`).pipe(catchError(this.errorHandler));
   }
 
   listarCardPorId(id: number): Observable<Card> {

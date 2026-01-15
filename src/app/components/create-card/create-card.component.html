@@ -18,13 +18,18 @@
       }
     </div>
 
-    <div class="form-group">
-      <label for="role">Status (Role)</label>
-      <select id="role" formControlName="role">
-        @for (option of roleOptions; track option.value) {
-        <option [value]="option.value">{{ option.label }}</option>
-        }
-      </select>
+    <!-- Role Selection (Only visible when editing) -->
+    <div class="form-group" *ngIf="isEditing">
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="role">
+          @for (option of roleOptions; track option.value) {
+          <mat-option [value]="option.value">
+            {{ option.label }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
       @if (cardForm.get('role')?.invalid && cardForm.get('role')?.touched) {
       <div class="error">O status é obrigatório.</div>
       }

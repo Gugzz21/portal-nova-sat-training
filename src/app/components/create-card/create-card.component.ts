@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon'; // Importante para o preview
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { CardService } from '../../service/card.service';
 import { CommonModule } from '@angular/common'; // Caso precise de diretivas comuns
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-create-card',
   standalone: true,
-  imports: [ReactiveFormsModule, MatIconModule, CommonModule], // Adicione MatIconModule
+  imports: [ReactiveFormsModule, MatIconModule, CommonModule, MatFormFieldModule, MatSelectModule], // Adicione MatIconModule
   templateUrl: './create-card.component.html',
   styleUrls: ['./create-card.component.css']
 })
@@ -38,6 +40,7 @@ export class CreateCardComponent implements OnInit {
       titulo: ['', Validators.required],
       descricao: ['', Validators.required],
       imagem: ['', Validators.required],
+      // Regra de negócio: Card sempre nasce como ROLE_ABERTO
       role: ['ROLE_ABERTO', Validators.required]
     });
   }
@@ -121,11 +124,7 @@ export class CreateCardComponent implements OnInit {
         this.cardService.criarCard(cardData).subscribe({
           next: () => {
             alert('Card criado com sucesso!');
-            // Reset form or navigate? Usually users want to create more or go back.
-            // Let's reset for creation flow.
-            this.cardForm.reset({ role: 'ROLE_ABERTO' });
-            this.inputType = 'image';
-            this.iconPreview = null;
+            this.router.navigate(['/cards']);
           },
           error: (err) => {
             console.error('Erro ao criar card:', err);
