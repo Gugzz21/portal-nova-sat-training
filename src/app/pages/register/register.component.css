@@ -22,7 +22,7 @@
 }
 
 .register-container {
-    background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), url('/assets/bclaro.png');
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/assets/bclaro.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
