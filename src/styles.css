@@ -150,5 +150,6 @@ a {
 }
 
 .dark .mat-mdc-option.mat-mdc-selected:not(.mat-mdc-option-multiple) {
-  background-color: var(--sidebar-hover-bg);
+  background-color: #1e3a5f;
+  /* Darker Blue */
 }
