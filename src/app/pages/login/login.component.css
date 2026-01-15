@@ -1,12 +1,12 @@
 :host-context(.dark) .login-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/assets/claro.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/assets/bescuro.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .login-container {
-  background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), url('/assets/escuro.png');
+  background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), url('/assets/bclaro.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
