@@ -1,9 +1,36 @@
+.logo-container {
+    margin-bottom: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-10px);
+}
+
+.logo-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+:host-context(.dark) .register-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/assets/claro.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .register-container {
+    background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), url('/assets/escuro.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.3s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: var(--background-light);
     flex-direction: column;
     gap: 20px;
 }
@@ -15,12 +42,19 @@
 }
 
 .register-card {
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.5);
+    /* More transparent white for light mode */
+    backdrop-filter: blur(5px);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
+}
+
+:host-context(.dark) .register-card {
+    background: rgba(51, 51, 51, 0.5);
+    /* More transparent for dark mode */
 }
 
 h2 {
@@ -36,7 +70,9 @@ h2 {
 label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--text-light);
+    color: var(--text-color);
+    /* Darker text for light mode */
+    font-weight: 500;
 }
 
 input {
