@@ -9,12 +9,11 @@
 </div>
 
 <div class="login-container">
-  
+
 
   <div class="login-card">
     <div class="logo-container">
-      <img [src]="isDarkTheme ? 'assets/corujita preto.png' : 'assets/corujita cinza.png'" alt="Logo Portal SAT"
-        class="logo-img">
+      <img [src]="isDarkTheme ? 'assets/corujita.png' : 'assets/corujita.png'" alt="Logo Portal SAT" class="logo-img">
     </div>
     <h2>Login</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
