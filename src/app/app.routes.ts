@@ -20,6 +20,8 @@ export const routes: Routes = [
       // Rota padrão (Dashboard)
       {
         path: '',
+        canActivate: [authGuard],
+        data: { roles: ['ADMIN'] },
         loadComponent: () => import('./pages/dashboardpage/dashboardpage.component').then(mod => mod.DashboardpageComponent)
       },
       // Rota para a página Sobre
@@ -50,6 +52,8 @@ export const routes: Routes = [
       // Rota para a página de Usuários
       {
         path: 'usuarios',
+        canActivate: [authGuard],
+        data: { roles: ['ADMIN'] },
         loadComponent: () => import('./pages/usuariospage/usuariospage.component').then(mod => mod.UsuariospageComponent)
       },
       // Rota para a página Externa

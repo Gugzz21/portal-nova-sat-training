@@ -15,14 +15,14 @@
 }
 
 :host-context(.dark) .register-container {
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/assets/bescuro.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/assets/florestae.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .register-container {
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/assets/bclaro.png');
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/assets/florestac.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

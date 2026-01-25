@@ -7,11 +7,22 @@ export const authGuard: CanActivateFn = (route, state) => {
     const router = inject(Router);
 
     // Verifica se o usuário está logado
-    if (authService.isLoggedIn()) {
-        return true;
-    } else {
+    if (!authService.isLoggedIn()) {
         // Redireciona para o login se não estiver autenticado
         router.navigate(['/login']);
         return false;
     }
+
+    // Checa roles caso a rota tenha data.roles definido
+    const requiredRoles = route.data?.['roles'] as string[] | undefined;
+    if (requiredRoles && requiredRoles.length > 0) {
+        const allowed = authService.hasAnyRole(requiredRoles);
+        if (!allowed) {
+            // Usuário autenticado, mas sem permissão: redireciona para home
+            router.navigate(['/']);
+            return false;
+        }
+    }
+
+    return true;
 };
