@@ -13,9 +13,10 @@
             [imagem]="card.imagem" [role]="card.role" (edit)="onEdit(card)" (delete)="onDelete(card)">
           </app-card>
 
-          <p class="empty" *ngIf="cards.length === 0">
-            Nenhum card disponível.
-          </p>
+          <div class="empty-state" *ngIf="cards.length === 0">
+            <img src="assets/cardcorujita.png" alt="Sem cards" class="empty-image">
+            <p>Nenhum card criado</p>
+          </div>
 
         </ng-container>
       </div>

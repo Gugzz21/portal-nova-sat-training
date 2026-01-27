@@ -35,9 +35,7 @@ h1 {
 
 .about-image {
   width: 40%;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  object-fit: cover;
+  margin-top: -50px;
 }
 
 .text-content {
