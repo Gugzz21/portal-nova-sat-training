@@ -47,4 +47,10 @@ export class SidenavComponent {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
+  /**
+   * Verifica se o usuário tem permissão de ADMIN.
+   */
+  isAdmin(): boolean {
+    return this.authService.hasAnyRole(['ADMIN']);
+  }
 }

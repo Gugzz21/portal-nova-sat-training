@@ -3,6 +3,7 @@ import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 
 export const authGuard: CanActivateFn = (route, state) => {
+
     const authService = inject(AuthService);
     const router = inject(Router);
 
@@ -18,8 +19,11 @@ export const authGuard: CanActivateFn = (route, state) => {
     if (requiredRoles && requiredRoles.length > 0) {
         const allowed = authService.hasAnyRole(requiredRoles);
         if (!allowed) {
-            // Usuário autenticado, mas sem permissão: redireciona para home
-            router.navigate(['/']);
+            // Usuário autenticado, mas sem permissão: redireciona        if (!allowed) {
+            const userRoles = authService.getUserRoles();
+
+            // Usuário autenticado, mas sem permissão: redireciona para cards para evitar loop
+            router.navigate(['/cards']);
             return false;
         }
     }

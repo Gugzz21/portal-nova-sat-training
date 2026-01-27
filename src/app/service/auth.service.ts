@@ -69,7 +69,7 @@ export class AuthService {
             const payload = parts[1];
             const decoded = atob(payload.replace(/-/g, '+').replace(/_/g, '/'));
             return JSON.parse(decodeURIComponent(
-                decoded.split('').map(function(c) {
+                decoded.split('').map(function (c) {
                     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
                 }).join('')
             ));

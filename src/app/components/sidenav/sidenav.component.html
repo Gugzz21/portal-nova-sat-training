@@ -5,10 +5,12 @@
     <!-- Drawer lateral que contém a lista de navegação -->
     <mat-drawer #drawer class="sidenav" mode="side" [opened]="true">
       <mat-nav-list class="nav-list">
-        <!-- Link para o Dashboard -->
+        <!-- Link para o Dashboard - Apenas ADMIN -->
+        @if (isAdmin()) {
         <a mat-list-item [routerLink]="['']" routerLinkActive="active" class="nav-link">
           <i class="material-icons">dashboard</i>Dashboard
         </a>
+        }
 
         <a mat-list-item [routerLink]="['/cards']" routerLinkActive="active" class="nav-link">
           <i class="material-icons">notes</i>Cards
@@ -18,9 +20,12 @@
           <i class="material-icons">add</i>Criação de Cards
         </a>
 
+        <!-- Link para Usuários - Apenas ADMIN -->
+        @if (isAdmin()) {
         <a mat-list-item [routerLink]="['/usuarios']" routerLinkActive="active" class="nav-link">
           <i class="material-icons">people</i>Usuários
         </a>
+        }
 
         <a mat-list-item [routerLink]="['/externo']" routerLinkActive="active" class="nav-link">
           <i class="material-icons">public</i>Externo
@@ -73,9 +78,11 @@
   <div class="mobile-menu" [class.open]="isMobileMenuOpen">
     <mat-nav-list class="nav-list">
       <!-- Links de navegação mobile (fecham o menu ao clicar) -->
+      @if (isAdmin()) {
       <a mat-list-item [routerLink]="['']" routerLinkActive="active" class="nav-link" (click)="toggleMobileMenu()">
         <i class="material-icons">dashboard</i>Dashboard
       </a>
+      }
       <a mat-list-item [routerLink]="['/cards']" routerLinkActive="active" class="nav-link"
         (click)="toggleMobileMenu()">
         <i class="material-icons">notes</i>Cards
@@ -84,10 +91,12 @@
         (click)="toggleMobileMenu()">
         <i class="material-icons">add</i>Criação de Cards
       </a>
+      @if (isAdmin()) {
       <a mat-list-item [routerLink]="['/usuarios']" routerLinkActive="active" class="nav-link"
         (click)="toggleMobileMenu()">
         <i class="material-icons">people</i>Usuários
       </a>
+      }
       <a mat-list-item [routerLink]="['/externo']" routerLinkActive="active" class="nav-link"
         (click)="toggleMobileMenu()">
         <i class="material-icons">public</i>Externo
